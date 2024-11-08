@@ -8,7 +8,8 @@
   $header_button_text = get_theme_mod('header_button_text', __('Get a Quete','techub'));
   $header_button_url = get_theme_mod('header_button_url', __('#','techub'));
 
-
+  $menu_col = $header_right_switch == true ? '6' : '10 text-end';
+  
 ?>
 
 
@@ -96,7 +97,8 @@
                         <div class="col-xl-6 d-none d-xl-block">
                             <div class="main-menu main-menu-5">
                                 <nav class="tp-main-menu-content">
-                                    <ul>
+                                <?php techub_menu(); ?>
+                                    <!-- <ul>
                                         <li class="has-dropdown"><a class="color-active" href="index.html">Home</a></li>
                                         <li class="has-dropdown"><a href="#">Pages</a>
                                             <ul class="submenu tp-submenu">
@@ -122,7 +124,7 @@
                                             </ul>
                                         </li>
                                         <li><a href="contact.html">Contact</a></li>
-                                    </ul>
+                                    </ul> -->
                                 </nav>
                             </div>
                         </div>

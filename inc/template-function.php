@@ -30,3 +30,17 @@ function techub_header_social(){
          <?php endif; ?>
     <?php
 }
+
+// techub_menu
+function techub_menu(){
+    wp_nav_menu( 
+        array( 
+            'theme_location'  => 'main-menu',
+            'menu_class'      => '',
+            'menu_id'         => '',
+            'container'      => '',
+            'fallback_cb'     => 'Techub_Walker_Nav_Menu::fallback',
+            'walker'     => new Techub_Walker_Nav_Menu,
+        ) 
+    ); 
+}

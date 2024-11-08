@@ -35,6 +35,13 @@ function techub_theme_sepport(){
      'style',
      'script',
  ));
+
+ // register nav menu
+ register_nav_menus(array(
+   'main-menu' => __('Main Menu', 'techub')
+ ));
+
+
 }
 
 add_action('after_setup_theme', 'techub_theme_sepport');
@@ -48,14 +55,20 @@ include_once('inc/common/scripts.php');
 
 
 /**
+ * Template Function 
+ */
+include_once('inc/template-function.php');
+
+/**
+ * Template Function 
+ */
+include_once('inc/nav-walker.php');
+
+
+/**
  *  kirki customizer 
 */
 if(class_exists('kirki')){
   include_once('inc/techub-kirki.php');
 }
 
-/**
- * Template Function 
- */
-
- include_once('inc/template-function.php');
