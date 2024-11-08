@@ -9,7 +9,7 @@
   $header_button_url = get_theme_mod('header_button_url', __('#','techub'));
 
   $menu_col = $header_right_switch == true ? '6' : '10 text-end';
-  
+
 ?>
 
 
@@ -94,37 +94,10 @@
                               <?php techub_header_logo(); ?>
                             </div>
                         </div>
-                        <div class="col-xl-6 d-none d-xl-block">
+                        <div class="col-xl-<?php echo esc_attr($menu_col); ?> d-none d-xl-block">
                             <div class="main-menu main-menu-5">
                                 <nav class="tp-main-menu-content">
                                 <?php techub_menu(); ?>
-                                    <!-- <ul>
-                                        <li class="has-dropdown"><a class="color-active" href="index.html">Home</a></li>
-                                        <li class="has-dropdown"><a href="#">Pages</a>
-                                            <ul class="submenu tp-submenu">
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="team.html">Our Team</a></li>
-                                                <li><a href="team-details.html">Team Details</a></li>
-                                                <li><a href="portfolio.html">Our Portfolio</a></li>
-                                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                                <li><a href="error.html">Error</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="portfolio.html">Portfolio</a></li>
-                                        <li class="has-dropdown"><a href="service.html">Services</a>
-                                            <ul class="submenu tp-submenu">
-                                                <li><a href="service.html">Our Service</a></li>
-                                                <li><a href="service-details.html">Service Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-dropdown"><a href="blog.html">Blog</a>
-                                            <ul class="submenu tp-submenu">
-                                                <li><a href="blog-sideber.html">Blog Sidebar</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul> -->
                                 </nav>
                             </div>
                         </div>
