@@ -1,8 +1,14 @@
-
 <?php 
   $address_text = get_theme_mod( 'address_text', ' Manchester 21, Zurich, CH ' );
   $address_url = get_theme_mod( 'address_url', ' https://www.google.com/maps/@41.6758525,-86.2531698,18.17z ' );
   $header_email = get_theme_mod( 'header_email', ' techubinfo@mail.com ' );
+  $header_top_switch = get_theme_mod('header_top_switch', false);
+  $header_right_switch = get_theme_mod('header_right_switch', false);
+
+  $header_button_text = get_theme_mod('header_button_text', __('Get a Quete','techub'));
+  $header_button_url = get_theme_mod('header_button_url', __('#','techub'));
+
+
 ?>
 
 
@@ -10,12 +16,12 @@
 <?php echo get_template_part('template-parts/header/offcanvas')?>
 
  <!-- pre loader area start -->
- <div class="loader-wrapper">
+ <!-- <div class="loader-wrapper">
         <div class="loader"></div>
         <div class="loder-section left-section"></div>
         <div class="loder-section right-section"></div>
         <div class="loader-brand-icon"><img src="assets/img/logo/preloder.png" alt=""></div>
-    </div>
+    </div> -->
     <!-- pre loader area end -->
 
 
@@ -32,6 +38,7 @@
    
     <!-- header area start -->
     <header class="tp-header-height">
+      <?php if(!empty($header_top_switch)) : ?>
         <div class="tp-header-top tp-header-5-top pt-10 pb-10 pl-110 pr-110 d-none d-xl-block">
             <div class="container-fluid">
                 <div class="row">
@@ -69,23 +76,21 @@
                                 </ul>
                             </div>
                             <div class="tp-header-top-social">
-                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                               <?php techub_header_social() ?>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <?php endif; ?>
         <div id="header-sticky" class="tp-header-bottom">
             <div class="tp-header-area">
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-4 col-md-4 col-6">
                             <div class="logo">
-                                <a href="index.html"><img src="<?php echo get_template_directory_uri() ?>/assets/img/logo/logo.png" alt=""></a>
+                              <?php techub_header_logo(); ?>
                             </div>
                         </div>
                         <div class="col-xl-6 d-none d-xl-block">
@@ -121,6 +126,8 @@
                                 </nav>
                             </div>
                         </div>
+
+                        <?php if(!empty($header_right_switch)) : ?>
                         <div class="col-xl-4 col-lg-8 col-md-8 col-6">
                             <div class="tp-header-right d-flex justify-content-end align-items-center">
 
@@ -130,9 +137,14 @@
                                 </div>
 
                                 <!-- header button -->
+                                <?php if(!empty($header_top_switch)) : ?>
+                                <!-- header button -->
                                 <div class="tp-header-button d-none d-lg-block">
-                                    <a class="tp-header-btn" rel="noreferrer" href="contact.html" target="_blank"><span>Get a Quete</span></a>
+                                    <a class="tp-header-btn" rel="noreferrer" href="<?php echo esc_attr($header_button_url); ?>" target="_blank">
+                                        <span><?php echo esc_html($header_button_text); ?></span>
+                                    </a>
                                 </div>
+                                <?php endif; ?>
 
                                 <!-- header mobile menu ber -->
                                 <div class="tp-header-menu-ber">
@@ -141,6 +153,9 @@
 
                             </div>
                         </div>
+
+                        <?php endif; ?>
+
                     </div>
                 </div>
             </div>

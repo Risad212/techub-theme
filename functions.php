@@ -53,3 +53,9 @@ include_once('inc/common/scripts.php');
 if(class_exists('kirki')){
   include_once('inc/techub-kirki.php');
 }
+
+/**
+ * Template Function 
+ */
+
+ include_once('inc/template-function.php');
